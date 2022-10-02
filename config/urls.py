@@ -22,6 +22,7 @@ from board.views import (
     index_function2,
     index_function3,
     index_function4,
+    index_function5,
 )
 
 urlpatterns = [
@@ -34,4 +35,5 @@ urlpatterns = [
     path("fbv3/", index_function3, name="index_function3"),
     path("fbv4/<str:name>/<str:code>/", index_function4, name="index_function4"),
     path("cbv2/", IndexClass2.as_view(), name="index_class2"),
+    path("fbv5/<str:name>/", index_function5, name="index_function5"),
 ]

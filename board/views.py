@@ -91,3 +91,23 @@ class IndexClass2(TemplateView):
     # POST
     def post(self, request):
         return HttpResponse("index by POST class2 called")
+
+
+@csrf_exempt
+def index_function5(request, name):
+    # GET
+    if request.method == "GET":
+        return render(
+            request,
+            "practice/index_f5.html",
+            {
+                "method": request.method,
+                "user": request.user,
+                "temp": "welcome to my site!!",
+                "name": name,
+                "code": request.GET.get("code"),
+            },
+        )
+    # POST
+    if request.method == "POST":
+        return HttpResponse("index by POST function5 called")

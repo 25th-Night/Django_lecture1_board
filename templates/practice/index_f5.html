@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index_function5</title>
+</head>
+{% csrf_token %}
+<body>
+    <h1>Hard Practice</h1>
+    <h3>test - 'index_function5'</h3>
+    <br>
+    <br>
+    <h4>{{method}}</h4>
+    <h4>{{user}}</h4>
+    <h4>{{temp}}</h4>
+    <h4>{{name}}</h4>
+    <h4>{{code}}</h4>
+
+    <a href="{% url 'index_class' %}">index_class 로 이동</a>
+    <br>
+    <br>
+    <a href="/cbv/">index_class 로 이동 (name 사용안함)</a>
+    <br>
+    <br>
+    <a href="{% url 'index_function4' '특정name' '특정code' %}">index_function4 로 이동</a>
+    <br>
+    <br>
+    <a href="{% url 'index_function5' '특정name' %}?code=특정code">index_function5 로 이동</a>
+</body>
+</html>
