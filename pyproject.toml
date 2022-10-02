@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "board"
+version = "0.1.0"
+description = "김형종 강사님 수업_ 1번째 클론코딩_board"
+authors = ["25th-Night <brown_eyed87@naver.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "3.2.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
