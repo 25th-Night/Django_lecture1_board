@@ -15,7 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from board.views import (
+    IndexClass,
+    IndexClass2,
+    index_function,
+    index_function2,
+    index_function3,
+    index_function4,
+)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # 127.0.0.1:8000/admin/ 으로 접속 시, admin page 나옴
+    path("admin/", admin.site.urls),
+    # 127.0.0.1:8000/ 으로 접속 시, views.py에서 생성한 index_function 을 통해 처리한 방법대로 화면이 나옴
+    path("fbv/", index_function, name="index_function"),
+    path("cbv/", IndexClass.as_view(), name="index_class"),
+    path("fbv2/", index_function2, name="index_function2"),
+    path("fbv3/", index_function3, name="index_function3"),
+    path("fbv4/<str:name>/<str:code>/", index_function4, name="index_function4"),
+    path("cbv2/", IndexClass2.as_view(), name="index_class2"),
 ]

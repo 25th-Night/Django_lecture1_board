@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>날짜</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>첨부파일</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in question_qs %}
+            <tr onclick="location.href='{% url 'question_detail' question.pk %}'">
+                <td class="date">{{question.created_at|date:'Y.m.d'}}</td>
+                <td class="title">{{question.title}}</td>
+                <td class="content">{{question.content}}</td>
+                <td class="screenshot">
+                    {% if question.screenshot.url is not None %}
+                    <img class="thumbnail" src="{{question.screenshot.url}}" alt="질문 제목">
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <button type="button" class="button-bg-full" onclick="location.href='{% url 'question_create' %}'">질문등록하기</button>
+</div>
+{% endblock content %}

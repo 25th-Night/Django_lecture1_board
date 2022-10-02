@@ -7,8 +7,6 @@ reated by https://www.toptal.com/developers/gitignore/api/python,django
 *.pyc
 __pycacnal
 media
-templates
-static
 .secrets
 db.sqlite3
 

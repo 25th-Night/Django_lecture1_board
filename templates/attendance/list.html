@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="warning hidden">
+    <h3>** 지난 일정은 출석 여부를 변경할 수 없습니다.</h3>
+</div>
+<div>
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>날짜</td>
+                <td>출석여부</td>
+                <td>비고</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for attendance in attendance_qs%}
+            <tr>
+                <td class="name">{{attendance.name}}</td>
+                <td class="date">{{attendance.date|date:"Y.m.d"}}</td>
+                <td class="status">{{attendance.get_status_display}}</td>
+                <td class="description">{{attendance.description}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <button type="button" class="button-bg-full" onclick="location.href='{% url 'attendance_create' %}'">출석체크하기</button>
+</div>
+{% endblock content %}

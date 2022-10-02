@@ -23,7 +23,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # SECRET
 SECRET_DIR = BASE_DIR / ".secrets"
-secrets = json.load(open(os.join.path(SECRET_DIR, "secrets.json")))
+secrets = json.load(open(os.path.join(SECRET_DIR, "secret.json")))
 SECRET_KEY = secrets["DJANGO_SECRET_KEY"]
 
 # STATIC

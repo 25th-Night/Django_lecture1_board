@@ -1,0 +1,188 @@
+/* COMMON */
+.hidden {
+    display: none !important;
+  }
+  
+  .warning {
+    color: red;
+  }
+  
+  .button-bg-full {
+    background-color: #009879;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #009879;
+    cursor: pointer;
+    width: 250px;
+    margin-top: 20px;
+  }
+  
+  .button-bg-empty {
+    background-color: #fff;
+    color: #009879;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #009879;
+    margin-top: 20px;
+  }
+  
+  /* HEADER */
+  header {
+    display: flex;
+    height: 72px;
+    width: 800px;
+    margin: auto;
+  }
+  
+  header nav {
+    margin: auto 100px;
+  }
+  
+  header nav ul {
+    margin: 0px;
+    display: flex;
+  }
+  
+  header nav ul li {
+    display: block;
+    padding: 0 28px;
+    line-height: 72px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  /* BASE */
+  .header {
+    text-align: center;
+    margin: 100px auto 50px auto;
+  }
+  
+  .content {
+    width: 800px;
+    height: fit-content;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  .content.attendances,
+  .content.questions {
+    text-align: center;
+  }
+  
+  .content.attendances_create {
+    text-align: left;
+  }
+  
+  /* ATTENDANCE LIST */
+  .attendance-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+  }
+  
+  .attendance-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .attendance-table th,
+  .attendance-table td {
+    padding: 12px 15px;
+    min-width: 130px;
+    text-align: center;
+  }
+  
+  .attendance-table td.description {
+    text-align: left;
+  }
+  
+  .attendance-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    cursor: pointer;
+  }
+  
+  .attendance-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .attendance-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .attendance-table tbody tr td .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* SURVEY FORM */
+  .form-item {
+    margin-top: 30px;
+  }
+  
+  .form-item .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .form-item .input-box {
+    height: 40px;
+    width: 550px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .radio-wrap {
+    margin: 10px 0px;
+  }
+  
+  .textarea-wrap {
+    margin: 10px 0px;
+  }
+  
+  .textarea-wrap textarea {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    height: 10rem;
+  }
+  
+  /* QUESTION DETAIL */
+  .uploaded-screenshot {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .question-item {
+    margin-top: 30px;
+  }
+  
+  .question-item .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .question-item .input-box {
+    height: 40px;
+    width: 230px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* QUESTION */
+  .content.question .form-item input[name='title'] {
+    width: 100%;
+  }

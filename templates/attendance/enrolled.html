@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="form-item">
+            <div class="title">이름</div>
+            <input class="input-box" type="text" name="name" value="">
+        </div>
+        <div class="form-item">
+            <div class="title">날짜</div>
+            <input class=""input-box" type="date" name="date" value="">
+        </div>
+        <div class="form-item">
+            <div class="title">출석여부</div>
+            <div class="radio-wrap">
+                <input type="radio" name="status" value="">
+                <label for="attendance">출석</label>
+            </div>
+            <div class="radio-wrap">
+                <input type="radio" name="status" value="">
+                <label for="absent">결석 (사유 필히 작성)</label>
+            </div>
+            <div class="radio-wrap">
+                <input type="radio" name="status" value="">
+                <label for="part">일부 일정 불참 (사유 필히 작성)</label>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="title">사유</div>
+            <div class="textarea-wrap">
+                <textarea name="description" form-items="8" cols="50"></textarea>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <button class="button-bg-full" type="submit">제출하기</button>
+            <button class="button-bg-empty" type="button" onclick="location.href='{% url 'attendance_list' %}'">목록보기</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
