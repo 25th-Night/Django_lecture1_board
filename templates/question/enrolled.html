@@ -10,7 +10,7 @@
     <div class="form-item">
         <div class="title">내용</div>
         <div class="textarea-wrap">
-            <textarea name="description" form-items="15" cols="64"></textarea>
+            <textarea name="content" form-items="15" cols="64"></textarea>
         </div>
     </div>
     <div class="form-item">
@@ -18,7 +18,7 @@
         <input type="file" accept="image/png, image/gif, image/jpeg" name="screenshot" value="">
     </div>
     <div class="form-item">
-        <button type="submit" class="button-bg-full">질문등록하기</button>
+        <button class="button-bg-full" type="submit">질문등록하기</button>
         <button class="button-bg-empty" type="button" onclick="location.href='{% url 'question_list' %}'">목록보기</button>
     </div>
 </form>

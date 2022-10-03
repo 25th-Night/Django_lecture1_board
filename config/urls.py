@@ -24,10 +24,22 @@ from board.views import (
     index_function4,
     index_function5,
 )
+from warmingup.views import (
+    index,
+    AttendanceView,
+    AttendanceCreateView,
+    QuestionView,
+    QuestionCreateView,
+    QuestionDetailView,
+)
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     # 127.0.0.1:8000/admin/ 으로 접속 시, admin page 나옴
     path("admin/", admin.site.urls),
+    path("", index, name="index"),
+    # 'board' App 관련 urls
     # 127.0.0.1:8000/ 으로 접속 시, views.py에서 생성한 index_function 을 통해 처리한 방법대로 화면이 나옴
     path("fbv/", index_function, name="index_function"),
     path("cbv/", IndexClass.as_view(), name="index_class"),
@@ -36,4 +48,10 @@ urlpatterns = [
     path("fbv4/<str:name>/<str:code>/", index_function4, name="index_function4"),
     path("cbv2/", IndexClass2.as_view(), name="index_class2"),
     path("fbv5/<str:name>/", index_function5, name="index_function5"),
-]
+    # 'warmingup' App 관련 urls
+    path("attendance/", AttendanceView.as_view(), name="attendance_list"),
+    path("attendance/create/", AttendanceCreateView.as_view(), name="attendance_create"),
+    path("question/", QuestionView.as_view(), name="question_list"),
+    path("question/create/", QuestionCreateView.as_view(), name="question_create"),
+    path("question/<int:pk>", QuestionDetailView.as_view(), name="question_detail"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

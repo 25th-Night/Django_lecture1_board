@@ -35,7 +35,6 @@ class IndexClass(View):
         return HttpResponse("index by POST class called")
 
 
-@csrf_exempt
 def index_function2(request):
     # GET
     if request.method == "GET":

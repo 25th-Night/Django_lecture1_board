@@ -27,7 +27,7 @@ secrets = json.load(open(os.path.join(SECRET_DIR, "secret.json")))
 SECRET_KEY = secrets["DJANGO_SECRET_KEY"]
 
 # STATIC
-STATICFILES_DIR = [BASE_DIR / "static"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # TEMPLATE
 TEMPLATE_DIR = BASE_DIR / "templates"
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # App
     "board",
+    "warmingup",
 ]
 
 MIDDLEWARE = [
